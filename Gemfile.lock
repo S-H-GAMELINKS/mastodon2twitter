@@ -1,13 +1,44 @@
+GIT
+  remote: https://github.com/tootsuite/mastodon-api.git
+  revision: 189deb8219ae1ce7c34386d9ad1ca7e4a5fec62c
+  ref: 189deb8
+  specs:
+    mastodon-api (1.2.0)
+      addressable (~> 2.5)
+      buftok
+      http (~> 3.0)
+      oj (~> 3.3)
+
 GEM
   remote: https://rubygems.org/
   specs:
+    addressable (2.7.0)
+      public_suffix (>= 2.0.2, < 5.0)
+    buftok (0.2.0)
+    domain_name (0.5.20190701)
+      unf (>= 0.0.5, < 1.0.0)
     dotenv (2.7.5)
+    http (3.3.0)
+      addressable (~> 2.3)
+      http-cookie (~> 1.0)
+      http-form_data (~> 2.0)
+      http_parser.rb (~> 0.6.0)
+    http-cookie (1.0.3)
+      domain_name (~> 0.5)
+    http-form_data (2.1.1)
+    http_parser.rb (0.6.0)
+    oj (3.9.2)
+    public_suffix (4.0.1)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.6)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   dotenv
+  mastodon-api!
 
 BUNDLED WITH
    2.0.1
