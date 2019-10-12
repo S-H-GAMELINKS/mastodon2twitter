@@ -1,4 +1,5 @@
 require 'dotenv'
+require 'nokogiri'
 require 'mastodon'
 require 'twitter'
 
@@ -16,8 +17,8 @@ stream = Mastodon::Streaming::Client.new(base_url: ENV["MASTODON_URL"], bearer_t
 while true
     begin
         stream.user(){|toot|
-            puts toot.content
-            client.update(toot.content)
+            puts tweet = toot.content.gsub(/^<p>|<\/p>/, '')
+            client.update(tweet)
         }
     rescue => error
         puts error
