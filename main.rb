@@ -1,5 +1,4 @@
 require 'dotenv'
-require 'nokogiri'
 require 'mastodon'
 require 'twitter'
 
