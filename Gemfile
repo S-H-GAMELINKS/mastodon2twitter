@@ -9,3 +9,6 @@ gem "dotenv"
 
 # Using mastodon-api
 gem "mastodon-api", require: "mastodon" 
+
+# Using Twitter API
+gem "twitter"
