@@ -16,8 +16,11 @@ stream = Mastodon::Streaming::Client.new(base_url: ENV["MASTODON_URL"], bearer_t
 while true
     begin
         stream.user(){|toot|
-            puts tweet = toot.content.gsub(/^<p>|<\/p>/, '')
-            client.update(tweet)
+            # Tweet My Toot
+            if toot.account.url === "#{ENV["MASTODON_URL"]}/@#{ENV["MASTODON_USERNAME"]}"
+                puts tweet = toot.content.gsub(/^<p>|<\/p>/, '')
+                client.update(tweet)
+            end
         }
     rescue => error
         puts error
