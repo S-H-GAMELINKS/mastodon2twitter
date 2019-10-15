@@ -18,7 +18,7 @@ while true
         stream.user(){|toot|
             # Tweet My Toot
             if toot.account.url === "#{ENV["MASTODON_URL"]}/@#{ENV["MASTODON_USERNAME"]}"
-                puts tweet = toot.content.gsub(/^<p>|<\/p>/, '')
+                puts tweet = toot.content.gsub(/<\/p><p>/, "\n\n").gsub(/<\/?(p|a|span).*?>/, '')
                 client.update(tweet)
             end
         }
